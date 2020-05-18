@@ -23,5 +23,14 @@ class TestLeapYear {
 			validator.checkLeapYear("20500");
 		});
 	}
+	
+	@Test
+	public void checkIfValidIntegerYear() {
+		Assertions.assertThrows(NumberFormatException.class, () -> {
+			LeapYear validator = new LeapYear();
+			validator.checkLeapYear("20a0");
+		});
+		
+	}
 
 }
