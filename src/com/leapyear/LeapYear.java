@@ -2,7 +2,7 @@ package com.leapyear;
 
 public class LeapYear {
 
-	public boolean checkLeapYear(String year) {
+	public String checkLeapYear(String year) {
 		int yearLenght = 4;
 		int leapYear;
 		if ( yearLenght != year.length()) { 
@@ -14,6 +14,10 @@ public class LeapYear {
 			} 
 		}
 		leapYear = Integer.parseInt(year);
-		return true;
+		if ((leapYear % 4 == 0) && (leapYear % 100 != 0)) {
+			return "Leap Year";
+		} 
+		return "Not a Leap Year";
+		
 	}
 }

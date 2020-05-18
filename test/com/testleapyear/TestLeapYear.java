@@ -1,6 +1,7 @@
 package com.testleapyear;
 
 import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -12,8 +13,8 @@ class TestLeapYear {
 	@Test
 	public void checkA4DigitYear() {
 		LeapYear validator = new LeapYear();
-		boolean result = validator.checkLeapYear("2000");
-		assertTrue("first value", result);
+		String result = validator.checkLeapYear("2008");
+		assertEquals("Leap Year",result);
 	}
 	
 	@Test
@@ -30,7 +31,13 @@ class TestLeapYear {
 			LeapYear validator = new LeapYear();
 			validator.checkLeapYear("20a0");
 		});
-		
 	}
-
+	
+	@Test
+	public void checkIfYearIsDivisibleBy4AndNot100ThanIsALeapYear() {
+			LeapYear validator = new LeapYear();
+			String result = validator.checkLeapYear("2008");
+			assertEquals("Leap Year",result);
+	}
+	
 }
