@@ -6,7 +6,7 @@ public class LeapYear {
 		int yearLenght = 4;
 		
 		if ( yearLenght != year.length()) { 
-			return false;
+			throw new NumberFormatException();
 		}
 		
 		return true;
