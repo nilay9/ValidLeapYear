@@ -36,8 +36,16 @@ class TestLeapYear {
 	@Test
 	public void checkIfYearIsDivisibleBy4AndNot100ThanIsALeapYear() {
 			LeapYear validator = new LeapYear();
-			String result = validator.checkLeapYear("2008");
+			String result = validator.checkLeapYear("2012");
 			assertEquals("Leap Year",result);
 	}
 	
+	@Test
+	public void checkIfYearIsDivisibleBy100AndNot400ThanIsNotALeapYear() {
+			LeapYear validator = new LeapYear();
+			String result = validator.checkLeapYear("2100");
+			assertEquals("Leap Year",result);
+	}
+	
+
 }
